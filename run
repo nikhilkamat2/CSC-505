@@ -1,0 +1,3 @@
+#!/bin/bash
+javac unique2.java
+java unique2
