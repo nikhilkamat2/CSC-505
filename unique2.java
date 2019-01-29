@@ -1,3 +1,8 @@
+/*
+*CSC505  Homework 1
+*Nikhil Kamat nnkamat 200261513
+*Deepali Prasad dprasad2 200200448
+*/ 
 import java.util.*;
 public class unique2
 {
@@ -37,6 +42,5 @@ public class unique2
             }
         }
         System.out.println(index+" "+maxcount);
-
     }
 }
