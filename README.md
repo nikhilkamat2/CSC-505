@@ -1,5 +1,7 @@
-# AlgosHW1
+# Algos
 Codes for Algorithms HW1
+
+# HW1 
 
 ## For Unique1
 ```
@@ -9,4 +11,17 @@ Codes for Algorithms HW1
 ## For Unique2
 ```
 ./run < input-1.txt
+```
+
+# HW 2
+```
+./run
+```
+
+```
+./heap bf < input-2.txt 
+```
+
+```
+./time
 ```
