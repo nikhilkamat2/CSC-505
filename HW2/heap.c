@@ -18,8 +18,8 @@
 //We have used the following reference
 //https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 #include<stdio.h>
-#include<string.h>
 #include<stdlib.h>
+#include<malloc.h>
 static int bf;
 static int count=0;
 static int shft=0;
