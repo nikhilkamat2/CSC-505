@@ -17,7 +17,6 @@
  */
 //We have used the following reference
 //https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
-#include <stdlib.h>
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
