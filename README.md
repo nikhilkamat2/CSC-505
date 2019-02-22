@@ -19,7 +19,7 @@ Codes for Algorithms HW1
 ```
 
 ```
-./heap bf < input-2.txt 
+./heap 16 < input-2.txt 
 ```
 
 ```
