@@ -93,6 +93,7 @@ void MinHeapify(Heap *h,int i)
         smaller=(i<<shft)+1;
         for(j=(i<<shft)+2;j<=(i<<shft)+bf && j<h->used;j++)
         {
+            count++;
             if(h->inst[j].key<min)
             {
                 min=h->inst[j].key;
@@ -107,7 +108,6 @@ void MinHeapify(Heap *h,int i)
             MinHeapify(h,smaller);
         }
     }
-
 }
 void removeMin(Heap *h,int *k,int *v)
 {

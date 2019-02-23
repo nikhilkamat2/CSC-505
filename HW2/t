@@ -4,13 +4,13 @@ echo "2"
 i=0
 while [ $i -le 10 ]
 do
-    /usr/bin/time -f "%e" ./heap 2 < input-4.txt > /dev/null
+    time ./heap 2 < input-4.txt > /dev/null
     i=`expr $i + 1`
 done
 echo "64"
 i=0
 while [ $i -le 10 ]
 do
-    /usr/bin/time -f "%e" ./heap 64 < input-4.txt > /dev/null
+    time ./heap 64 < input-4.txt > /dev/null
     i=`expr $i + 1`
 done
