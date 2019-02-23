@@ -33,11 +33,23 @@ typedef struct {
   size_t size;
 } Heap;
 
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  initHeap
+ *  Description:  Initialises a Dynamic Array to Create a Heap
+ * =====================================================================================
+ */
 void initHeap(Heap *h, size_t initialSize) {
   h->inst=(Node*)malloc(initialSize*sizeof(Node));
   h->used=0;
   h->size=initialSize;
 }
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  printHeap
+ *  Description:  Prints all elements of the Heap
+ * =====================================================================================
+ */
 void printHeap(Heap *h)
 {
     int i;
@@ -46,10 +58,22 @@ void printHeap(Heap *h)
         printf("%d %d\n",h->inst[i].key,h->inst[i].value);
     }
 }
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  parent
+ *  Description:  Returns the parent of a node
+ * =====================================================================================
+ */
 int parent(int n)
 {
       return ((n-1)>>shft);
 }
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  percolateUp
+ *  Description:  Percolates a Node up the Heap
+ * =====================================================================================
+ */
 void percolateUp(Heap *h,int n)
 {
     if(parent(n)>=0)
@@ -64,7 +88,12 @@ void percolateUp(Heap *h,int n)
         }
     }
 }
-
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  insertValue
+ *  Description:  Inserts a Value into the Heap
+ * =====================================================================================
+ */
 void insertValue(Heap *h, int k, int v)
 {
     if(h->used == h->size)
@@ -78,11 +107,23 @@ void insertValue(Heap *h, int k, int v)
     percolateUp(h,h->used);
     h->used++;
 }
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  freeHeap
+ *  Description:  Release the memory allocated for the Heap
+ * =====================================================================================
+ */
 void freeHeap(Heap *h) {
   free(h->inst);
   h->inst=NULL;
   h->used=h->size=0;
 }
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  MinHeapify
+ *  Description:  Build an Min-Heap from an array
+ * =====================================================================================
+ */
 void MinHeapify(Heap *h,int i)
 {
     int smaller,j,min;
@@ -109,6 +150,12 @@ void MinHeapify(Heap *h,int i)
         }
     }
 }
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  removeMin
+ *  Description:  Removes the Minimum Value from the Heap
+ * =====================================================================================
+ */
 void removeMin(Heap *h,int *k,int *v)
 {
     *k=h->inst[0].key;
