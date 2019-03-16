@@ -25,3 +25,14 @@ Codes for Algorithms HW1
 ```
 ./time
 ```
+# HW 3
+
+```
+./com naive
+./com greedy
+./com dp
+
+./run naive
+./run greedy
+./run dp
+```
