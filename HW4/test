@@ -1,0 +1,7 @@
+#!/bin/bash
+
+./prim < input-1.txt
+./prim < input-2.txt
+./prim < input-3.txt
+./prim < input-4.txt
+./prim < input-5.txt
