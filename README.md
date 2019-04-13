@@ -36,3 +36,10 @@ Codes for Algorithms HW1
 ./run greedy
 ./run dp
 ```
+
+# HW 4
+
+```
+./run
+./test
+```
