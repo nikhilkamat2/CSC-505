@@ -23,6 +23,7 @@
 static int bf;
 static int count=0;
 static int shft=0;
+static int *heapPositions;
 typedef struct{
     int key;
     int value;
@@ -41,6 +42,7 @@ typedef struct {
  */
 void initHeap(Heap *h, size_t initialSize) {
   h->inst=(Node*)malloc(initialSize*sizeof(Node));
+  heapPositions=(int *)malloc(initialSize*sizeof(int));
   h->used=0;
   h->size=initialSize;
 }
@@ -100,6 +102,7 @@ void insertValue(Heap *h, int k, int v)
     {
         h->size*=2;
         h->inst=(Node*)realloc(h->inst, h->size * sizeof(Node));
+        heapPositions=(int*)realloc(heapPositions,h->size*sizeof(int));
     }
     h->inst[h->used].key=k;
     h->inst[h->used].value=v;
