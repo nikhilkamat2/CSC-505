@@ -295,6 +295,7 @@ int main(int argv, char** argc)
            j=j*2;
     }
 
+    j=bf;
     while(j/2!=0)
     {
         shft++;
