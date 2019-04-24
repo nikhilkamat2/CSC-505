@@ -43,3 +43,10 @@ Codes for Algorithms HW1
 ./run
 ./test
 ```
+
+# HW 5
+
+```
+./run
+./test
+```

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+./johnsons < input-1.txt
+./johnsons < input-2.txt
+./johnsons < input-3.txt
+./johnsons < input-4.txt
+./johnsons < input-5.txt
