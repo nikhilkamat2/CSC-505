@@ -1,5 +1,5 @@
 # Algos
-Codes for Algorithms HW1
+Codes for Algorithms HW
 
 # HW1 
 
