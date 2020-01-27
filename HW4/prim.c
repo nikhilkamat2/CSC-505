@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author: Deepali Prasad dprasad2, Nikhil Kamat nnkamat
+ *         Author: Nikhil Kamat nnkamat
  *   Organization: North Carolina State Univertsity
  *
  * =====================================================================================
@@ -54,6 +54,14 @@ typedef struct {
   size_t used;
   size_t size;
 } Heap;
+
+void swap( int *a, int *b )
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 //Graph Functions
 void initgraph(Graph *graph,int vertices,int edges)
@@ -146,8 +154,8 @@ void percolateUp(Heap *h,int n)
           heapPositions[h->inst[parent(n)].value]=n;
           heapPositions[h->inst[n].value]=parent(n);
 
-          (h->inst[n].key)^=(h->inst[parent(n)].key)^=(h->inst[n].key)^=(h->inst[parent(n)].key);
-          (h->inst[n].value)^=(h->inst[parent(n)].value)^=(h->inst[n].value)^=(h->inst[parent(n)].value);
+          swap(&h->inst[n].key, &h->inst[parent(n)].key);
+          swap(&h->inst[n].value, &h->inst[parent(n)].value);
 
           percolateUp(h,parent(n));
        }
@@ -195,8 +203,8 @@ void MinHeapify(Heap *h,int i)
           heapPositions[h->inst[i].value]=smaller;
           heapPositions[h->inst[smaller].value]=i;
 
-          (h->inst[i].key)^=(h->inst[smaller].key)^=(h->inst[i].key)^=(h->inst[smaller].key);
-          (h->inst[i].value)^=(h->inst[smaller].value)^=(h->inst[i].value)^=(h->inst[smaller].value);
+          swap(&h->inst[i].key, &h->inst[smaller].key);
+          swap(&h->inst[i].value, &h->inst[smaller].value);
 
           MinHeapify(h,smaller);
         }
@@ -212,8 +220,8 @@ void removeMin(Heap *h,int *k,int *v)
 
     h->used--;
 
-    (h->inst[0].key)^=(h->inst[h->used].key)^=(h->inst[0].key)^=(h->inst[h->used].key);
-    (h->inst[0].value)^=(h->inst[h->used].value)^=(h->inst[0].value)^=(h->inst[h->used].value);
+    swap(&h->inst[0].key, &h->inst[h->used].key);
+    swap(&h->inst[0].value, &h->inst[h->used].value);
 
     heapPositions[h->inst[0].value]=0;
 

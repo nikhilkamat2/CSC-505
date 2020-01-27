@@ -10,12 +10,13 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Nikhil Kamat nnkamat, Deepali Prasad dprasad2
+ *         Author:  Nikhil Kamat nnkamat 
+ *
  *   Organization:  North Carolina State University
  *
  * =====================================================================================
  */
-//We have used the following reference
+//Have used the following reference
 //https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 #include<stdio.h>
 #include<stdlib.h>
@@ -33,6 +34,21 @@ typedef struct {
   size_t used;
   size_t size;
 } Heap;
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  swap
+ *  Description:  Swaps 2 Integers
+ * =====================================================================================
+ */
+void swap( int *a, int *b )
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 /* 
  * ===  FUNCTION  ======================================================================
@@ -83,8 +99,8 @@ void percolateUp(Heap *h,int n)
         count++;
         if(h->inst[n].key<h->inst[parent(n)].key)
         {
-            (h->inst[n].key)^=(h->inst[parent(n)].key)^=(h->inst[n].key)^=(h->inst[parent(n)].key);
-            (h->inst[n].value)^=(h->inst[parent(n)].value)^=(h->inst[n].value)^=(h->inst[parent(n)].value);
+            swap(&h->inst[n].key, &h->inst[parent(n)].key);
+            swap(&h->inst[n].value, &h->inst[parent(n)].value);
 
             percolateUp(h,parent(n));
         }
@@ -146,8 +162,8 @@ void MinHeapify(Heap *h,int i)
         }
         if(h->inst[i].key>h->inst[smaller].key)
         {
-            (h->inst[i].key)^=(h->inst[smaller].key)^=(h->inst[i].key)^=(h->inst[smaller].key);
-            (h->inst[i].value)^=(h->inst[smaller].value)^=(h->inst[i].value)^=(h->inst[smaller].value);
+            swap(&h->inst[i].key, &h->inst[smaller].key);
+            swap(&h->inst[i].value, &h->inst[smaller].value);
 
             MinHeapify(h,smaller);
         }
@@ -166,8 +182,8 @@ void removeMin(Heap *h,int *k,int *v)
 
     h->used--;
 
-    (h->inst[0].key)^=(h->inst[h->used].key)^=(h->inst[0].key)^=(h->inst[h->used].key);
-    (h->inst[0].value)^=(h->inst[h->used].value)^=(h->inst[0].value)^=(h->inst[h->used].value);
+    swap(&h->inst[0].key, &h->inst[h->used].key);
+    swap(&h->inst[0].value, &h->inst[h->used].value);
 
     MinHeapify(h,0);
 }
