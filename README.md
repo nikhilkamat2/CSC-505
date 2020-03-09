@@ -1,6 +1,11 @@
 # Algos
 Codes for Algorithms HW
 
+Compile using
+```
+make
+```
+
 # HW1 
 
 ## For Unique1
@@ -15,10 +20,6 @@ Codes for Algorithms HW
 
 # HW 2
 ```
-./run
-```
-
-```
 ./heap 16 < input-2.txt 
 ```
 
@@ -28,10 +29,6 @@ Codes for Algorithms HW
 # HW 3
 
 ```
-./com naive
-./com greedy
-./com dp
-
 ./run naive
 ./run greedy
 ./run dp
@@ -40,13 +37,11 @@ Codes for Algorithms HW
 # HW 4
 
 ```
-./run
 ./test
 ```
 
 # HW 5
 
 ```
-./run
 ./test
 ```
